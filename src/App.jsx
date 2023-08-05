@@ -1,7 +1,7 @@
 import Product from './components/Product';
 import { useEffect,useState } from 'react';
-import Cart from './components/cart.jsx';
 import './App.css';
+import Cart from './components/Cart';
 
 
 function App(){   
@@ -11,15 +11,11 @@ const[state, setState]= useState({
  isLoading: true,//es necesario para checkear el fetching de datos.Estado de carga.
 error:null,// string
  });
-const addCart = (prod) => {
- updateCart((prev) => [...prev,prod]);
+ const addCart = (prod) => {
+ updateCart((prev) => [...prev,prod]);//Esta f agrega los productos.
 };
 
-const getTotalCartPrice = (cart) => { //Esta función reductora coloca en cero el precio.
-const totalPrice= cart.reduce((accum,curr) => accum + curr.price,0);
-console.log("totalPrice")
-return totalPrice.toFixed(2);//para agregar decimales.
-};
+
 const getDerivedCart=() => {//Esta f, muestra el carrito derivado.
   const derivedCart = [];
   cart.forEach((item) => {  
@@ -30,6 +26,7 @@ const getDerivedCart=() => {//Esta f, muestra el carrito derivado.
      } else { 
   derivedCart.push({ 
     id: item.id,
+    image:item.image,
     name: item.title,
     quantity:1,
     totalPrice: item.price,
@@ -37,6 +34,10 @@ const getDerivedCart=() => {//Esta f, muestra el carrito derivado.
   }
   });
   return derivedCart;
+   }
+
+   const clearCart = () =>{ //Esta f resetea el carrito.
+    updateCart([])
    }
 
 useEffect(() => {
@@ -50,20 +51,17 @@ useEffect(() => {
   return (
     <>
     <header className= 'header'>
-      <h1>Tienda</h1>
-      {cart.length ? <h3>Productos en el carrito:{cart.length} Total:${getTotalCartPrice(cart)}</h3>
-      :
-      <p>No hay productos en el carrito</p>
-
-    }
-    <Cart cart={getDerivedCart()}/>
+      <h1>Shop Your Best Outfit...</h1>
+     
+    <Cart cart={getDerivedCart()} clearCart={clearCart}/>
     </header>
     <main className= 'container'> 
-    {state.data.map(prod=> <Product key={prod.id} prod={prod} addCart={addCart}/>  //Esta clase principal muestra los datos, y los itera con map.
-     
+    {state.data.map(prod=>( <Product key={prod.id} prod={prod} addCart={addCart}/>  //Esta clase principal muestra los datos, y los itera con map.
+    )
   )
     }
     </main>
+    
      </>
    
   

@@ -1,0 +1,58 @@
+.hidden-div {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: white;
+    width: 25%; /* El aside ocupará un cuarto de la pantalla */
+    height: 100%; /* El aside ocupará toda la altura de la pantalla */
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando haya muchos items */
+    padding: 10px;
+    border: 1px solid #ccc;
+    z-index: 9999;
+    display: none;
+  }
+  .hidden-div.hidden {
+    display: block;
+  }
+  /* Estilo para la imagen */
+  .hidden-div img {
+    width: 30%; /* La imagen ocupará todo el ancho disponible en el aside */
+    height: auto; /* Ajustar la altura proporcionalmente según el ancho */
+  }
+  /* Estilo para los elementos de la lista */
+  .hidden-div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .hidden-div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .hidden-div li {
+    margin-bottom: 10px;
+  }
+  /* Estilo para el contenido de cada item */
+  .cart-item {
+    display: flex;
+    align-items: center;
+  }
+  /* Estilo para la imagen */
+  .cart-item img {
+    width: 100px; /* Cambiar el tamaño de la imagen según sea necesario */
+    height: auto;
+    margin-right: 10px; /* Agregar un espacio entre la imagen y la información */
+  }
+  /* Estilo para el título y cantidad */
+  .cart-item .item-info {
+    flex: 1; /* Permite que este div ocupe el espacio restante en el contenedor */
+  }
+  .cart-item .item-info p {
+    margin: 0;
+    margin-bottom: 5px; /* Agregar un espacio entre el título y la cantidad */
+  }
+  /* Estilo para el precio */
+  .cart-item .item-price {
+    margin: 0;
+  }

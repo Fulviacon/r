@@ -5,6 +5,7 @@ border: "1px solid",
 borderRadius:"10px",
 display:"flex",
 flexDirection:"column",   
+
 };
 export const cardInnerContainer ={
 display: "flex",
@@ -33,4 +34,7 @@ backgroundColor:"white",
 fontSize:"1.1rem",
 borderRadius:"10px",
 };
+ 
+
+
 //export //default {card, cardBtn,cardInnerContainer,cardPrice, cardPriceBtn}
