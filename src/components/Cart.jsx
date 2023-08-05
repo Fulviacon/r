@@ -25,10 +25,10 @@ return (
         <button onClick={toggleHidden}> {/*Es el btn que ejecuta la f para mostrar o no el carrito.*/}
           {isHidden ? "Ocultar Carrito" : "Mostrar Carrito"}
         </button>
-        <p>Productos en el carrito:<span>{getTotalProductQuantity()}</span></p> {/*Muestra el total de productos en el carrito.*/}
+        <h2>Productos en el carrito:<span>{getTotalProductQuantity()}</span></h2> {/*Muestra el total de productos en el carrito.*/}
         <aside className={`hidden-div ${isHidden ? "hidden" : ""}`}>{/*Si está en oculto, lo modif.*/}
           {cart.length ? (
-           <Parrafo texto={`Productos en el carrito: ${getTotalProductQuantity()}`}/> 
+           <Parrafo texto={`PRODUCTOS en el CARRITO: ${getTotalProductQuantity()}`}/> 
    
           ) : (
             <p>No hay productos en el carrito</p>

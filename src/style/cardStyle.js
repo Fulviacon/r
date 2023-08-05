@@ -17,21 +17,23 @@ export const cardPrice ={
 width:"50%",
 textAlign: "center",
 fontFamily:"verdana",
-fontSize: "1,8rem",
+fontSize: "1,5rem",
 fontWeight: "700",
+
 };
 export const cardPriceBtn ={
     diplay: "flex",
     flexDirection:"column",
     alignItems:"center",
     justifyContent:"center",height:"100%",
+    marginBottom:"2rem",
 };
 export const cardBtn ={
 border:"none",
 height: "40px",
 cursor: "pointer",
 backgroundColor:"white",
-fontSize:"1.1rem",
+fontSize:"1rem",
 borderRadius:"10px",
 };
  
